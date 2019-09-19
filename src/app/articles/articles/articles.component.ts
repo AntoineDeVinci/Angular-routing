@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-articles',
@@ -15,9 +15,11 @@ export class ArticlesComponent implements OnInit {
     description: 'A complete tutorial about creating router and navigation in the Angular 8 Web Application'
   };
 
-  
+  gotoDetails(articleId: any) {
+    this.router.navigate(['/article/', articleId]);
+  }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
